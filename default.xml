@@ -17,7 +17,7 @@
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/shusky" src="dts/google"/>
     <linkfile dest=".d1.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/akita" name="kernel/private/devices/google/akita" groups="partner,akita" >
+  <project path="private/devices/google/akita" name="kernel/devices/google/akita" groups="partner,akita" >
     <linkfile dest="build_akita.sh" src="build_akita.sh"/>
     <linkfile dest=".d2.bazelrc" src="device.bazelrc"/>
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/akita" src="dts/google"/>
