@@ -3,13 +3,16 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
+  <remote  name="grapheneos"
+    fetch="https://github.com/GrapheneOS/"
+    revision="refs/heads/14-caimito" />
   <default revision="android-gs-caimito-6.1-android14-qpr3-d1"
     remote="aosp" sync-j="4" />
 
-  <project path="aosp" name="kernel/common" groups="partner" >
+  <project path="aosp" name="kernel_common-6.1" groups="partner" remote="grapheneos" >
     <linkfile dest="aosp-staging" src="." />
   </project>
-  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" />
+  <project path="private/google-modules/soc/gs" name="kernel_google-modules_soc_gs-caimito" groups="partner" remote="grapheneos" />
   <project path="private/devices/google/common" name="kernel/devices/google/common" groups="partner" >
     <linkfile dest="WORKSPACE" src="bazel.WORKSPACE" />
     <linkfile dest="device.bazelrc" src="device.bazelrc" />
@@ -20,18 +23,18 @@
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/ripcurrent" src="dts/google" />
   </project>
   <project path="private/devices/google/zumapro" name="kernel/devices/google/zumapro" groups="partner" />
-  <project path="private/devices/google/caimito" name="kernel/devices/google/caimito" groups="partner,caimito" >
+  <project path="private/devices/google/caimito" name="kernel_devices_google_caimito" groups="partner,caimito" remote="grapheneos" >
     <linkfile dest="build_caimito.sh" src="build_caimito.sh" />
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/ripcurrentpro" src="dts/google" />
     <linkfile dest=".d7.bazelrc" src="device.bazelrc" />
   </project>
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
+  <project path="private/google-modules/amplifiers" name="kernel_google-modules_amplifiers-caimito" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
   <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
   <project path="private/google-modules/bluetooth/synaptics" name="kernel/google-modules/bluetooth/synaptics" groups="partner" />
   <project path="private/google-modules/bluetooth/qcom" name="kernel/google-modules/bluetooth/qcom" groups="partner" />
-  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner" />
+  <project path="private/google-modules/bms" name="kernel_google-modules_bms-caimito" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/display/samsung" name="kernel/google-modules/display/samsung" groups="partner" />
   <project path="private/google-modules/display/common" name="kernel/google-modules/display/common" groups="partner" />
   <project path="private/google-modules/display/panels/caimito" name="kernel/google-modules/display/panels/caimito" groups="partner" />
@@ -49,7 +52,7 @@
   <project path="private/google-modules/misc" name="kernel/google-modules/misc" groups="partner" />
   <project path="private/google-modules/perf" name="kernel/google-modules/perf" groups="partner" />
   <project path="private/google-modules/power/mitigation" name="kernel/google-modules/power/mitigation" groups="partner" />
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
+  <project path="private/google-modules/power/reset" name="kernel_google-modules_power_reset-caimito" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner" />
   <project path="private/google-modules/radio/samsung/s5300" name="kernel/google-modules/radio/samsung/s5300" groups="partner" />
   <project path="private/google-modules/radio/samsung/s5400" name="kernel/google-modules/radio/samsung/s5400" groups="partner" />
@@ -73,7 +76,7 @@
   <project path="private/google-modules/wlan/wcn6740/cnss2" name="kernel/google-modules/wlan/qcom/wcn6740/cnss2" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/wlan" name="kernel/google-modules/wlan/qcom/wcn6740/wlan" groups="partner" />
   <project path="private/google-modules/wlan/wlan_ptracker" name="kernel/google-modules/wlan/wlan_ptracker" groups="partner" />
-  <project path="build/kernel" name="kernel/build" groups="partner" >
+  <project path="build/kernel" name="kernel_build-caimito" groups="partner" remote="grapheneos" >
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh" />
     <linkfile dest="build/build.sh" src="build.sh" />
     <linkfile dest="build/build_abi.sh" src="build_abi.sh" />
