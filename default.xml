@@ -6,7 +6,7 @@
   <remote  name="grapheneos"
     fetch="https://github.com/GrapheneOS/"
     revision="refs/heads/14-caimito" />
-  <default revision="android-gs-caimito-6.1-android14-qpr3-d1"
+  <default revision="refs/tags/android-14.0.0_r0.122"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel_common-6.1" groups="partner" remote="grapheneos" >
