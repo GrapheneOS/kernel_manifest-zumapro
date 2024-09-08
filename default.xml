@@ -25,6 +25,10 @@
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/ripcurrentpro" src="dts/google" />
     <linkfile dest=".d7.bazelrc" src="device.bazelrc" />
   </project>
+  <project path="private/devices/google/comet" name="kernel/devices/google/comet" groups="partner,comet" >
+    <linkfile dest="build_comet.sh" src="build_comet.sh" />
+    <linkfile dest=".d8.bazelrc" src="device.bazelrc" />
+  </project>
   <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
@@ -69,6 +73,7 @@
   <project path="private/google-modules/wlan/bcm4398" name="kernel/google-modules/wlan/bcmdhd/bcm4398" groups="partner" />
   <project path="private/google-modules/wlan/bcm4390" name="kernel/google-modules/wlan/bcmdhd/bcm4390" groups="partner" />
   <project path="private/google-modules/wlan/bcm4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
+  <project path="private/google-modules/wlan/bcm4383" name="kernel/google-modules/wlan/bcmdhd/bcm4383" groups="partner" />
   <project path="private/google-modules/wlan/dhd43752p" name="kernel/google-modules/wlan/syna/dhd43752p" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/cnss2" name="kernel/google-modules/wlan/qcom/wcn6740/cnss2" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/wlan" name="kernel/google-modules/wlan/qcom/wcn6740/wlan" groups="partner" />
