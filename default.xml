@@ -9,7 +9,7 @@
   <default revision="refs/tags/android-15.0.0_r0.39"
     remote="aosp" sync-j="4" />
 
-  <project path="aosp" name="kernel_common-6.1" groups="partner" remote="grapheneos" >
+  <project path="aosp" name="kernel_common-6.1" groups="partner" remote="grapheneos" revision="aff168c20fd5984455b86a87b00c5c12f238eb47" >
     <linkfile dest="aosp-staging" src="." />
     <linkfile dest="common" src="." />
   </project>
