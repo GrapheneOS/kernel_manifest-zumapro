@@ -48,7 +48,7 @@
   <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner" />
   <project path="private/google-modules/fingerprint/qcom/qfs4008" name="kernel/google-modules/fingerprint/qcom/qfs4008" groups="partner" />
   <project path="private/google-modules/gps/broadcom/bcm47765" name="kernel/google-modules/gps/broadcom/bcm47765" groups="partner" />
-  <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner" />
+  <project path="private/google-modules/gpu" name="kernel_google-modules_gpu" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/gxp/gs201" name="kernel/google-modules/gxp/gs201" groups="partner" />
   <project path="private/google-modules/gxp/zuma" name="kernel_google-modules_gxp_zuma" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/hdcp/samsung" name="kernel/google-modules/hdcp/samsung" groups="partner" />
