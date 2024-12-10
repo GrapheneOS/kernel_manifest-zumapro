@@ -3,28 +3,77 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-caimito-6.1-android14-qpr3-d1"
+  <default revision="android-gs-raviole-6.1-android15-qpr2-beta"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel/common" groups="partner" >
-    <linkfile dest="aosp-staging" src="." />
+    <linkfile dest="common/build.config.constants" src="build.config.constants"/>
+    <linkfile dest="common/modules.bzl" src="modules.bzl"/>
   </project>
-  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" />
   <project path="private/devices/google/common" name="kernel/devices/google/common" groups="partner" >
-    <linkfile dest="WORKSPACE" src="bazel.WORKSPACE" />
-    <linkfile dest="device.bazelrc" src="device.bazelrc" />
-    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh" />
+    <linkfile dest="WORKSPACE" src="bazel.WORKSPACE"/>
+    <linkfile dest="device.bazelrc" src="device.bazelrc"/>
+    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh"/>
+    <linkfile dest="common/BUILD.bazel" src="kleaf/common.BUILD.bazel"/>
   </project>
-  <project path="private/devices/google/zuma" name="kernel/devices/google/zuma" groups="partner" />
+  <project path="private/devices/google/gs101" name="kernel/devices/google/gs101" groups="partner" >
+    <linkfile dest="build_gs101.sh" src="build_gs101.sh"/>
+    <linkfile dest=".c1.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/raviole" name="kernel/devices/google/raviole" groups="partner,raviole" >
+    <linkfile dest="build_raviole.sh" src="build_raviole.sh"/>
+    <linkfile dest=".d13.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/bluejay" name="kernel/devices/google/bluejay" groups="partner,bluejay" >
+    <linkfile dest="build_bluejay.sh" src="build_bluejay.sh"/>
+    <linkfile dest=".d14.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/gs201" name="kernel/devices/google/gs201" groups="partner" >
+    <linkfile dest="build_gs201.sh" src="build_gs201.sh"/>
+    <linkfile dest=".c2.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/pantah" name="kernel/devices/google/pantah" groups="partner,pantah" >
+    <linkfile dest="build_pantah.sh" src="build_pantah.sh"/>
+    <linkfile dest=".d1.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/lynx" name="kernel/devices/google/lynx" groups="partner,lynx" >
+    <linkfile dest="build_lynx.sh" src="build_lynx.sh"/>
+    <linkfile dest=".d15.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/felix" name="kernel/devices/google/felix" groups="partner,felix" >
+    <linkfile dest="build_felix.sh" src="build_felix.sh"/>
+    <linkfile dest=".d2.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/tangorpro" name="kernel/devices/google/tangorpro" groups="partner,tangorpro" >
+    <linkfile dest="build_tangorpro.sh" src="build_tangorpro.sh"/>
+    <linkfile dest=".d3.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/zuma" name="kernel/devices/google/zuma" groups="partner" >
+    <linkfile dest="build_zuma.sh" src="build_zuma.sh"/>
+    <linkfile dest=".c3.bazelrc" src="device.bazelrc"/>
+  </project>
   <project path="private/devices/google/shusky" name="kernel/devices/google/shusky" groups="partner,shusky" >
-    <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/ripcurrent" src="dts/google" />
+    <linkfile dest="build_shusky.sh" src="build_shusky.sh"/>
+    <linkfile dest=".d4.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/zumapro" name="kernel/devices/google/zumapro" groups="partner" />
+  <project path="private/devices/google/akita" name="kernel/devices/google/akita" groups="partner,akita" >
+    <linkfile dest="build_akita.sh" src="build_akita.sh"/>
+    <linkfile dest=".d5.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/zumapro" name="kernel/devices/google/zumapro" groups="partner" >
+    <linkfile dest="build_zumapro.sh" src="build_zumapro.sh"/>
+    <linkfile dest=".c4.bazelrc" src="device.bazelrc"/>
+  </project>
   <project path="private/devices/google/caimito" name="kernel/devices/google/caimito" groups="partner,caimito" >
-    <linkfile dest="build_caimito.sh" src="build_caimito.sh" />
-    <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/ripcurrentpro" src="dts/google" />
-    <linkfile dest=".d7.bazelrc" src="device.bazelrc" />
+    <linkfile dest="build_caimito.sh" src="build_caimito.sh"/>
+    <linkfile dest=".d7.bazelrc" src="device.bazelrc"/>
   </project>
+  <project path="private/devices/google/comet" name="kernel/devices/google/comet" groups="partner,comet" >
+    <linkfile dest="build_comet.sh" src="build_comet.sh"/>
+    <linkfile dest=".d8.bazelrc" src="device.bazelrc"/>
+  </project>
+
+  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" />
   <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
@@ -66,9 +115,10 @@
   <project path="private/google-modules/uwb/qorvo/qm35" name="kernel/google-modules/uwb/qorvo/qm35" groups="partner" />
   <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner" />
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
-  <project path="private/google-modules/wlan/bcm4398" name="kernel/google-modules/wlan/bcmdhd/bcm4398" groups="partner" />
-  <project path="private/google-modules/wlan/bcm4390" name="kernel/google-modules/wlan/bcmdhd/bcm4390" groups="partner" />
+  <project path="private/google-modules/wlan/bcm4383" name="kernel/google-modules/wlan/bcmdhd/bcm4383" groups="partner" />
   <project path="private/google-modules/wlan/bcm4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
+  <project path="private/google-modules/wlan/bcm4390" name="kernel/google-modules/wlan/bcmdhd/bcm4390" groups="partner" />
+  <project path="private/google-modules/wlan/bcm4398" name="kernel/google-modules/wlan/bcmdhd/bcm4398" groups="partner" />
   <project path="private/google-modules/wlan/dhd43752p" name="kernel/google-modules/wlan/syna/dhd43752p" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/cnss2" name="kernel/google-modules/wlan/qcom/wcn6740/cnss2" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/wlan" name="kernel/google-modules/wlan/qcom/wcn6740/wlan" groups="partner" />
@@ -89,7 +139,6 @@
   <project path="kernel/configs" name="kernel/configs" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" groups="partner" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" />
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" />
