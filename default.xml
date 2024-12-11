@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
-  <remote  name="aosp"
+    <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-caimito-6.1-android14-qpr3-d1"
+  <default revision="android-gs-caimito-6.1-android15-qpr1"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel/common" groups="partner" >
-    <linkfile dest="aosp-staging" src="." />
+    <linkfile dest="common/build.config.constants" src="build.config.constants"/>
+    <linkfile dest="common/modules.bzl" src="modules.bzl"/>
   </project>
-  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" />
   <project path="private/devices/google/common" name="kernel/devices/google/common" groups="partner" >
-    <linkfile dest="WORKSPACE" src="bazel.WORKSPACE" />
-    <linkfile dest="device.bazelrc" src="device.bazelrc" />
-    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh" />
+    <linkfile dest="WORKSPACE" src="bazel.WORKSPACE"/>
+    <linkfile dest="device.bazelrc" src="device.bazelrc"/>
+    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh"/>
+    <linkfile dest="common/BUILD.bazel" src="kleaf/common.BUILD.bazel"/>
   </project>
   <project path="private/devices/google/zuma" name="kernel/devices/google/zuma" groups="partner" />
   <project path="private/devices/google/shusky" name="kernel/devices/google/shusky" groups="partner,shusky" >
-    <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/ripcurrent" src="dts/google" />
+    <linkfile dest="build_shusky.sh" src="build_shusky.sh"/>
+    <linkfile dest=".d4.bazelrc" src="device.bazelrc"/>
   </project>
   <project path="private/devices/google/zumapro" name="kernel/devices/google/zumapro" groups="partner" />
   <project path="private/devices/google/caimito" name="kernel/devices/google/caimito" groups="partner,caimito" >
-    <linkfile dest="build_caimito.sh" src="build_caimito.sh" />
-    <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/ripcurrentpro" src="dts/google" />
-    <linkfile dest=".d7.bazelrc" src="device.bazelrc" />
+    <linkfile dest="build_caimito.sh" src="build_caimito.sh"/>
+    <linkfile dest=".d7.bazelrc" src="device.bazelrc"/>
+  </project>
+  <project path="private/devices/google/comet" name="kernel/devices/google/comet" groups="partner,comet" >
+    <linkfile dest="build_comet.sh" src="build_comet.sh"/>
+    <linkfile dest=".d8.bazelrc" src="device.bazelrc"/>
   </project>
   <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
@@ -51,6 +55,7 @@
   <project path="private/google-modules/power/mitigation" name="kernel/google-modules/power/mitigation" groups="partner" />
   <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
   <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner" />
+  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" />
   <project path="private/google-modules/radio/samsung/s5300" name="kernel/google-modules/radio/samsung/s5300" groups="partner" />
   <project path="private/google-modules/radio/samsung/s5400" name="kernel/google-modules/radio/samsung/s5400" groups="partner" />
   <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner" />
@@ -68,28 +73,28 @@
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
   <project path="private/google-modules/wlan/bcm4398" name="kernel/google-modules/wlan/bcmdhd/bcm4398" groups="partner" />
   <project path="private/google-modules/wlan/bcm4390" name="kernel/google-modules/wlan/bcmdhd/bcm4390" groups="partner" />
+  <project path="private/google-modules/wlan/bcm4383" name="kernel/google-modules/wlan/bcmdhd/bcm4383" groups="partner" />
   <project path="private/google-modules/wlan/bcm4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
   <project path="private/google-modules/wlan/dhd43752p" name="kernel/google-modules/wlan/syna/dhd43752p" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/cnss2" name="kernel/google-modules/wlan/qcom/wcn6740/cnss2" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/wlan" name="kernel/google-modules/wlan/qcom/wcn6740/wlan" groups="partner" />
   <project path="private/google-modules/wlan/wlan_ptracker" name="kernel/google-modules/wlan/wlan_ptracker" groups="partner" />
   <project path="build/kernel" name="kernel/build" groups="partner" >
-    <linkfile dest="tools/bazel" src="kleaf/bazel.sh" />
-    <linkfile dest="build/build.sh" src="build.sh" />
-    <linkfile dest="build/build_abi.sh" src="build_abi.sh" />
-    <linkfile dest="build/build_test.sh" src="build_test.sh" />
-    <linkfile dest="build/build_utils.sh" src="build_utils.sh" />
-    <linkfile dest="build/config.sh" src="config.sh" />
-    <linkfile dest="build/envsetup.sh" src="envsetup.sh" />
-    <linkfile dest="build/_setup_env.sh" src="_setup_env.sh" />
-    <linkfile dest="build/multi-switcher.sh" src="multi-switcher.sh" />
-    <linkfile dest="build/abi" src="abi" />
-    <linkfile dest="build/static_analysis" src="static_analysis" />
+    <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
+    <linkfile dest="build/build.sh" src="build.sh"/>
+    <linkfile dest="build/build_abi.sh" src="build_abi.sh"/>
+    <linkfile dest="build/build_test.sh" src="build_test.sh"/>
+    <linkfile dest="build/build_utils.sh" src="build_utils.sh"/>
+    <linkfile dest="build/config.sh" src="config.sh"/>
+    <linkfile dest="build/envsetup.sh" src="envsetup.sh"/>
+    <linkfile dest="build/_setup_env.sh" src="_setup_env.sh"/>
+    <linkfile dest="build/multi-switcher.sh" src="multi-switcher.sh"/>
+    <linkfile dest="build/abi" src="abi"/>
+    <linkfile dest="build/static_analysis" src="static_analysis"/>
   </project>
   <project path="kernel/configs" name="kernel/configs" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" groups="partner" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" />
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" />
