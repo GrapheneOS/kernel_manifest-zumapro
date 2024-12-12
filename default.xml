@@ -93,16 +93,16 @@
     <linkfile dest="build/static_analysis" src="static_analysis"/>
   </project>
   <project path="kernel/configs" name="kernel/configs" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" />
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="partner" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" clone-depth="1" />
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" clone-depth="1" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" clone-depth="1" />
+  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" clone-depth="1" />
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="partner" />
   <project path="external/bazel-skylib" name="platform/external/bazel-skylib" groups="partner" />
   <project path="external/python/absl-py" name="platform/external/python/absl-py" groups="partner" />
   <project path="external/stardoc" name="platform/external/stardoc" groups="partner" />
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" groups="partner" />
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" groups="partner" />
-  <project path="prebuilts/ndk-r23" name="toolchain/prebuilts/ndk/r23" groups="partner" />
+  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" groups="partner" clone-depth="1" />
+  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" groups="partner" clone-depth="1" />
+  <project path="prebuilts/ndk-r23" name="toolchain/prebuilts/ndk/r23" groups="partner" clone-depth="1" />
 </manifest>
