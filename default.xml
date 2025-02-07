@@ -3,10 +3,13 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
+  <remote name="grapheneos"
+    fetch="https://github.com/GrapheneOS/"
+    revision="refs/heads/15-qpr2" />
   <default revision="android-gs-caimito-6.1-android15-qpr2-beta"
     remote="aosp" sync-j="4" />
 
-  <project path="aosp" name="kernel/common" groups="partner" >
+  <project path="aosp" name="kernel_common-6.1" groups="partner" remote="grapheneos" >
     <linkfile dest="common/build.config.constants" src="build.config.constants"/>
     <linkfile dest="common/modules.bzl" src="modules.bzl"/>
   </project>
@@ -20,11 +23,11 @@
     <linkfile dest="build_gs101.sh" src="build_gs101.sh"/>
     <linkfile dest=".c1.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/raviole" name="kernel/devices/google/raviole" groups="partner,raviole" >
+  <project path="private/devices/google/raviole" name="kernel_devices_google_raviole" groups="partner,raviole" remote="grapheneos" >
     <linkfile dest="build_raviole.sh" src="build_raviole.sh"/>
     <linkfile dest=".d13.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/bluejay" name="kernel/devices/google/bluejay" groups="partner,bluejay" >
+  <project path="private/devices/google/bluejay" name="kernel_devices_google_bluejay" groups="partner,bluejay" remote="grapheneos" >
     <linkfile dest="build_bluejay.sh" src="build_bluejay.sh"/>
     <linkfile dest=".d14.bazelrc" src="device.bazelrc"/>
   </project>
@@ -32,19 +35,19 @@
     <linkfile dest="build_gs201.sh" src="build_gs201.sh"/>
     <linkfile dest=".c2.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/pantah" name="kernel/devices/google/pantah" groups="partner,pantah" >
+  <project path="private/devices/google/pantah" name="kernel_devices_google_pantah" groups="partner,pantah" remote="grapheneos" >
     <linkfile dest="build_pantah.sh" src="build_pantah.sh"/>
     <linkfile dest=".d1.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/lynx" name="kernel/devices/google/lynx" groups="partner,lynx" >
+  <project path="private/devices/google/lynx" name="kernel_devices_google_lynx" groups="partner,lynx" remote="grapheneos" >
     <linkfile dest="build_lynx.sh" src="build_lynx.sh"/>
     <linkfile dest=".d15.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/felix" name="kernel/devices/google/felix" groups="partner,felix" >
+  <project path="private/devices/google/felix" name="kernel_devices_google_felix" groups="partner,felix" remote="grapheneos" >
     <linkfile dest="build_felix.sh" src="build_felix.sh"/>
     <linkfile dest=".d2.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/tangorpro" name="kernel/devices/google/tangorpro" groups="partner,tangorpro" >
+  <project path="private/devices/google/tangorpro" name="kernel_devices_google_tangorpro" groups="partner,tangorpro" remote="grapheneos" >
     <linkfile dest="build_tangorpro.sh" src="build_tangorpro.sh"/>
     <linkfile dest=".d3.bazelrc" src="device.bazelrc"/>
   </project>
@@ -52,11 +55,11 @@
     <linkfile dest="build_zuma.sh" src="build_zuma.sh"/>
     <linkfile dest=".c3.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/shusky" name="kernel/devices/google/shusky" groups="partner,shusky" >
+  <project path="private/devices/google/shusky" name="kernel_devices_google_shusky" groups="partner,shusky" remote="grapheneos" >
     <linkfile dest="build_shusky.sh" src="build_shusky.sh"/>
     <linkfile dest=".d4.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/akita" name="kernel/devices/google/akita" groups="partner,akita" >
+  <project path="private/devices/google/akita" name="kernel_devices_google_akita" groups="partner,akita" remote="grapheneos" >
     <linkfile dest="build_akita.sh" src="build_akita.sh"/>
     <linkfile dest=".d5.bazelrc" src="device.bazelrc"/>
   </project>
@@ -64,41 +67,41 @@
     <linkfile dest="build_zumapro.sh" src="build_zumapro.sh"/>
     <linkfile dest=".c4.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/caimito" name="kernel/devices/google/caimito" groups="partner,caimito" >
+  <project path="private/devices/google/caimito" name="kernel_devices_google_caimito" groups="partner,caimito" remote="grapheneos" >
     <linkfile dest="build_caimito.sh" src="build_caimito.sh"/>
     <linkfile dest=".d7.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/comet" name="kernel/devices/google/comet" groups="partner,comet" >
+  <project path="private/devices/google/comet" name="kernel_devices_google_comet" groups="partner,comet" remote="grapheneos" >
     <linkfile dest="build_comet.sh" src="build_comet.sh"/>
     <linkfile dest=".d8.bazelrc" src="device.bazelrc"/>
   </project>
 
-  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" />
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
+  <project path="private/google-modules/soc/gs" name="kernel_google-modules_soc_gs" groups="partner" remote="grapheneos" />
+  <project path="private/google-modules/amplifiers" name="kernel_google-modules_amplifiers" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
   <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
   <project path="private/google-modules/bluetooth/synaptics" name="kernel/google-modules/bluetooth/synaptics" groups="partner" />
   <project path="private/google-modules/bluetooth/qcom" name="kernel/google-modules/bluetooth/qcom" groups="partner" />
-  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner" />
+  <project path="private/google-modules/bms" name="kernel_google-modules_bms" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/display/samsung" name="kernel/google-modules/display/samsung" groups="partner" />
   <project path="private/google-modules/display/common" name="kernel/google-modules/display/common" groups="partner" />
   <project path="private/google-modules/display/panels/caimito" name="kernel/google-modules/display/panels/caimito" groups="partner" />
   <project path="private/google-modules/edgetpu/abrolhos" name="kernel/google-modules/edgetpu/abrolhos" groups="partner" />
   <project path="private/google-modules/edgetpu/janeiro" name="kernel/google-modules/edgetpu/janeiro" groups="partner" />
-  <project path="private/google-modules/edgetpu/rio" name="kernel/google-modules/edgetpu/rio" groups="partner" />
+  <project path="private/google-modules/edgetpu/rio" name="kernel_google-modules_edgetpu_rio" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner" />
   <project path="private/google-modules/fingerprint/qcom/qfs4008" name="kernel/google-modules/fingerprint/qcom/qfs4008" groups="partner" />
   <project path="private/google-modules/gps/broadcom/bcm47765" name="kernel/google-modules/gps/broadcom/bcm47765" groups="partner" />
   <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner" />
   <project path="private/google-modules/gxp/gs201" name="kernel/google-modules/gxp/gs201" groups="partner" />
-  <project path="private/google-modules/gxp/zuma" name="kernel/google-modules/gxp/zuma" groups="partner" />
+  <project path="private/google-modules/gxp/zuma" name="kernel_google-modules_gxp_zuma" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/hdcp/samsung" name="kernel/google-modules/hdcp/samsung" groups="partner" />
   <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner" />
   <project path="private/google-modules/misc" name="kernel/google-modules/misc" groups="partner" />
   <project path="private/google-modules/perf" name="kernel/google-modules/perf" groups="partner" />
   <project path="private/google-modules/power/mitigation" name="kernel/google-modules/power/mitigation" groups="partner" />
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
+  <project path="private/google-modules/power/reset" name="kernel_google-modules_power_reset" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner" />
   <project path="private/google-modules/radio/samsung/s5300" name="kernel/google-modules/radio/samsung/s5300" groups="partner" />
   <project path="private/google-modules/radio/samsung/s5400" name="kernel/google-modules/radio/samsung/s5400" groups="partner" />
@@ -115,15 +118,15 @@
   <project path="private/google-modules/uwb/qorvo/qm35" name="kernel/google-modules/uwb/qorvo/qm35" groups="partner" />
   <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner" />
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
-  <project path="private/google-modules/wlan/bcm4383" name="kernel/google-modules/wlan/bcmdhd/bcm4383" groups="partner" />
-  <project path="private/google-modules/wlan/bcm4389" name="kernel/google-modules/wlan/bcmdhd/bcm4389" groups="partner" />
-  <project path="private/google-modules/wlan/bcm4390" name="kernel/google-modules/wlan/bcmdhd/bcm4390" groups="partner" />
-  <project path="private/google-modules/wlan/bcm4398" name="kernel/google-modules/wlan/bcmdhd/bcm4398" groups="partner" />
-  <project path="private/google-modules/wlan/dhd43752p" name="kernel/google-modules/wlan/syna/dhd43752p" groups="partner" />
+  <project path="private/google-modules/wlan/bcm4383" name="kernel_google-modules_wlan_bcmdhd_bcm4383" groups="partner" remote="grapheneos" />
+  <project path="private/google-modules/wlan/bcm4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389" groups="partner" remote="grapheneos" />
+  <project path="private/google-modules/wlan/bcm4390" name="kernel_google-modules_wlan_bcmdhd_bcm4390" groups="partner" remote="grapheneos" />
+  <project path="private/google-modules/wlan/bcm4398" name="kernel_google-modules_wlan_bcmdhd_bcm4398" groups="partner" remote="grapheneos" />
+  <project path="private/google-modules/wlan/dhd43752p" name="kernel_google-modules_wlan_syna_dhd43752p" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/wlan/wcn6740/cnss2" name="kernel/google-modules/wlan/qcom/wcn6740/cnss2" groups="partner" />
   <project path="private/google-modules/wlan/wcn6740/wlan" name="kernel/google-modules/wlan/qcom/wcn6740/wlan" groups="partner" />
   <project path="private/google-modules/wlan/wlan_ptracker" name="kernel/google-modules/wlan/wlan_ptracker" groups="partner" />
-  <project path="build/kernel" name="kernel/build" groups="partner" >
+  <project path="build/kernel" name="kernel_build" groups="partner" remote="grapheneos" >
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh" />
     <linkfile dest="build/build.sh" src="build.sh" />
     <linkfile dest="build/build_abi.sh" src="build_abi.sh" />
